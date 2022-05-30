@@ -1,0 +1,5 @@
+package com.cg.application1.vo;
+
+public class AddEmployeeRequest {
+
+}

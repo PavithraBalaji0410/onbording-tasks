@@ -1,0 +1,20 @@
+package com.cg.application1.dao;
+
+import java.util.Collection;
+import java.util.List;
+
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+
+import com.cg.application1.dto.Employee;
+import com.cg.application1.vo.EmployeeDetails;
+
+@Mapper(componentModel = "spring")
+public interface EmployeeMapper {
+	
+	@Mapping(source="id",target ="id")
+	EmployeeDetails convert(Employee emp);
+	
+	@Mapping(source="name",target ="name")
+	List<EmployeeDetails> convertList(Collection<Employee> list);
+}

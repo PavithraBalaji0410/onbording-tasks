@@ -1,0 +1,63 @@
+package com.cg.application1.mapper;
+
+import com.cg.application1.dto.Employee;
+import com.cg.application1.vo.AddEmployeeRequest;
+import com.cg.application1.vo.EmployeeDetails;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2022-05-30T12:17:00+0530",
+    comments = "version: 1.4.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.4.1.jar, environment: Java 17.0.2 (Eclipse Adoptium)"
+)
+@Component
+public class EmployeeMapperImpl implements EmployeeMapper {
+
+    @Override
+    public Employee convertToDto(AddEmployeeRequest request) {
+        if ( request == null ) {
+            return null;
+        }
+
+        Employee employee = new Employee();
+
+        employee.setId( request.getId() );
+        employee.setName( request.getName() );
+        employee.setAge( request.getAge() );
+
+        return employee;
+    }
+
+    @Override
+    public EmployeeDetails convert(Employee emp) {
+        if ( emp == null ) {
+            return null;
+        }
+
+        EmployeeDetails employeeDetails = new EmployeeDetails();
+
+        employeeDetails.setId( (int) emp.getId() );
+        employeeDetails.setName( emp.getName() );
+        employeeDetails.setAge( emp.getAge() );
+
+        return employeeDetails;
+    }
+
+    @Override
+    public List<EmployeeDetails> convertList(Collection<Employee> list) {
+        if ( list == null ) {
+            return null;
+        }
+
+        List<EmployeeDetails> list1 = new ArrayList<EmployeeDetails>( list.size() );
+        for ( Employee employee : list ) {
+            list1.add( convert( employee ) );
+        }
+
+        return list1;
+    }
+}

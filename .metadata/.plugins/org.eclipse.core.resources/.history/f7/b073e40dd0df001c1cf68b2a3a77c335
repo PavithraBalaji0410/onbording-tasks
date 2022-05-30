@@ -1,0 +1,46 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.0'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+group = 'com.cg'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('springCloudVersion', "2020.0.5")
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	//implementation 'org.springdoc:springdoc-openapi-ui:1.5.9'
+	implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+	implementation 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+	
+  
+	runtimeOnly 'com.h2database:h2'
+	//runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+
+	testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	//testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+	testImplementation 'org.mockito:mockito-junit-jupiter:4.5.1'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	
+}
+
+
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

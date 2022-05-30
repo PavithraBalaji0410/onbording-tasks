@@ -1,0 +1,15 @@
+server.port=9494
+management.security.enabled=false
+
+# ===============================
+# = DATA SOURCE
+# ===============================
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+
+# enabling h2 console
+spring.h2.console.enabled=true
+
+

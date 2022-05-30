@@ -1,0 +1,5 @@
+package com.cg.application1.service;
+
+public class IEmployeeService {
+
+}

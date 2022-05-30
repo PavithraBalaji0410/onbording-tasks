@@ -1,0 +1,3 @@
+INSERT INTO `employee` (`id`, `name`, `age`) VALUES (1, 'Pavithra', 22);
+INSERT INTO `employee` (`id`, `name`, `age`) VALUES (2, 'Naresh', 21);
+INSERT INTO `employee` (`id`, `name`, `age`) VALUES (3, 'Gokul', 21);
