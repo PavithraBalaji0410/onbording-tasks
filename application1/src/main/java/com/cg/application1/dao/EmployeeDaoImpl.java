@@ -28,10 +28,9 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				PreparedStatement ps = connection.prepareStatement("INSERT INTO EMPLOYEE(id,name,age) VALUES(?,?,?)", Statement.RETURN_GENERATED_KEYS);
-				ps.setLong(1,emp.getId());
-				ps.setString(2, emp.getName());
-				ps.setInt(3, emp.getAge());
+				PreparedStatement ps = connection.prepareStatement("INSERT INTO EMPLOYEE(name,age) VALUES(?,?)", Statement.RETURN_GENERATED_KEYS);
+				ps.setString(1, emp.getName());
+				ps.setInt(2, emp.getAge());
 				return ps;
 			}
 		}, holder);

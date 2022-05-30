@@ -16,7 +16,7 @@ public interface EmployeeMapper {
 	EmployeeMapper INSTANCE = Mappers.getMapper(EmployeeMapper.class);
 	
 
-	@Mapping(source="id",target ="id")
+	@Mapping(source="name",target ="name")
 	Employee convertToDto(AddEmployeeRequest request);
 	
 	@Mapping(source="id",target ="id")

@@ -6,24 +6,13 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 public class AddEmployeeRequest {
-	
-	private int id;
+
 	@NotBlank
 	private String name;
 	@NotNull
 	@Min(21)
 	@Max(55)
 	private int age;
-	
-	
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;
@@ -41,9 +30,9 @@ public class AddEmployeeRequest {
 		this.age = age;
 	}
 
-	public AddEmployeeRequest(int id, @NotBlank String name, @NotNull @Min(21) @Max(55) int age) {
+	public AddEmployeeRequest( @NotBlank String name, @NotNull @Min(21) @Max(55) int age) {
 		super();
-		this.id=id;
+		
 		this.name = name;
 		this.age = age;
 	}
